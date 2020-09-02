@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "Wchar2Char.h"
 
 
