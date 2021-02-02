@@ -3,8 +3,8 @@
 
 CWchar2Char::CWchar2Char(void)
 {
-	m_char = NULL;
-	m_wchar = NULL;
+	memset(m_char, 0, 1024);
+	memset(m_wchar, 0, 1024);  
 }
 
 
@@ -24,7 +24,7 @@ char* CWchar2Char::WcharToChar(wchar_t* wc)
 {  
 	//Release();  
 	int len= WideCharToMultiByte(CP_ACP,0,wc,(int)wcslen(wc),NULL,0,NULL,NULL);  
-	m_char = new char[len + 1];
+	//m_char = new char[len + 1];
 	WideCharToMultiByte(CP_ACP,0,wc,(int)wcslen(wc),m_char,len,NULL,NULL);  
 	m_char[len]='\0';  
 	return m_char;  
