@@ -13,15 +13,15 @@ public:
 	/*virtual~ CUser(); */ 
 	static CWchar2Char& getInstance();
 
-	char* WcharToChar(wchar_t* wc);//¿í×Ö½Ú×ªµ¥×Ö½Ú   
-	wchar_t* CharToWchar(char* c); //µ¥×Ö½Ú×ª¿í×Ö½Ú   
-	void Release();//ÊÍ·Å×ÊÔ´   
+	char* WcharToChar(wchar_t* wc);// å®½å­—ç¬¦è½¬æ¢è‡³ä¸€åŠå­—ç¬¦   
+	wchar_t* CharToWchar(char* c); // ä¸€èˆ¬å­—ç¬¦è½¬æ¢è‡³å®½å­—ç¬¦ 
+	void Release();//é‡Šæ”¾èµ„æº   
 
-	std::string Unicode2Utf8(const std::wstring& widestring);
-	std::wstring  utf8toUnicode(const std::string & sStr);
+	std::string Unicode2Utf8(const std::wstring& widestring); //unicode to utf8
+	std::wstring utf8toUnicode(const std::string & sStr); // utf8 to unicode
 
 private:  
-	char *m_char;  
-	wchar_t *m_wchar; 
+	char m_char[1024];  
+	wchar_t m_wchar[1024]; 
 };
 
